@@ -23,17 +23,12 @@ int main(void) {
     }
   }
 }
-float mc_pi(int dart) {
-  float x, y, dist, p_circle=0;
-  for (int i=0; i<dart; i++) {
-    x = frandom(i);
-    y = frandom(i);
-    dist = pow((pow(x, 2) + pow(y, 2)), 0.5);
-    if(dist < 1) {
-      p_circle++;
-    }
+float wallis_pi(int n) {
+  float res=1;
+  for (int i=1; i<=n; i++) {
+    res *= 4* pow(i, 2)/ (4* pow(i, 2) - 1);
   }
-  return 4 * (p_circle / dart);
-}
-
+  return res* 2;
+  
+ }   
 
