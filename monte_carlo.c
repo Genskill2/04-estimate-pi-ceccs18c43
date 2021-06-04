@@ -38,6 +38,18 @@ int main(void) {
     }
   }
 }
+float mc_pi(int dart) {
+  float x, y, dist, p_circle=0;
+  for (int i=0; i<dart; i++) {
+    x = frandom(i);
+    y = frandom(i);
+    dist = pow((pow(x, 2) + pow(y, 2)), 0.5);
+    if(dist < 1) {
+      p_circle++;
+    }
+  }
+  return 4 * (p_circle / dart);
+}
 
 
 
